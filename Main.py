@@ -8,8 +8,8 @@ api_hash = "08181401f6807cdc954f6c7d8231dfcf"
 client = TelegramClient("session", api_id, api_hash)
 
 # --- Telegram Bot ---
-BOT_TOKEN = "7962211786:AAHBZIxnb6oJr2W3KXQE"
-CHANNEL_ID = -2324737561   # your private channel ID
+BOT_TOKEN = "7962211786:AAHBZIxnb6oJr2W3KXQs74x31kn2KDpIJGE"
+CHANNEL_ID = -1001234567890   # your private channel ID
 user_selected = {}
 
 # Start bot
@@ -43,7 +43,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_selected[query.from_user.id] = msg_id
 
     # Short link (replace with your shortener)
-    short_link = f"https://shortxlinks.com/{msg_id}"
+    short_link = f"https://your-shortener.com/{msg_id}"
 
     await query.edit_message_text(
         text=f"👉 Click this link to continue:\n{short_link}\n\nAfter ads, type /done"
@@ -71,3 +71,4 @@ app.add_handler(CommandHandler("done", done))
 
 print("✅ Bot is running...")
 app.run_polling()
+
